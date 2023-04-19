@@ -9,6 +9,8 @@ import "./app.css";
 function App() {
   const [score, setScore] = useState(0);
   const [playerChoice, setPlayerChoice] = useState("");
+  const [playerResult, setPlayerResult] = useState("");
+  const [computerChoice, setComputerChoice] = useState("");
 
   return (
     <>
@@ -19,12 +21,28 @@ function App() {
           <Route
             exact
             path="/"
-            element={<Game setPlayerChoice={setPlayerChoice} />}
+            element={
+              <Game
+                playerChoice={playerChoice}
+                setPlayerChoice={setPlayerChoice}
+                setPlayerResult={setPlayerResult}
+                setComputerChoice={setComputerChoice}
+                computerChoice={computerChoice}
+                score={score}
+                setScore={setScore}
+              />
+            }
           />
 
           <Route
             path="/result"
-            element={<Result playerChoice={playerChoice} setScore={setScore} />}
+            element={
+              <Result
+                playerChoice={playerChoice}
+                playerResult={playerResult}
+                computerChoice={computerChoice}
+              />
+            }
           />
         </Routes>
       </div>
