@@ -1,6 +1,6 @@
 import React from "react";
 
-function Game({ playerChoice, setPlayerChoice, handlePageNavigation }) {
+function Game({setPlayerChoice, handlePageNavigation }) {
   return (
     <div>
       <div

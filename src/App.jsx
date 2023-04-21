@@ -32,7 +32,6 @@ function App() {
           path="/"
           element={
             <Game
-              playerChoice={playerChoice}
               setPlayerChoice={setPlayerChoice}
               handlePageNavigation={handlePageNavigation}
             />

@@ -15,18 +15,22 @@ function Result({ playerChoice, setScore, handlePageNavigation }) {
   }, []);
 
   const getWinner = () => {
-    if (playerChoice === computerChoice) {
-      setPlayerResult("tie");
-    } else if (
+    if (
       (playerChoice === "rock" && computerChoice === "scissors") ||
       (playerChoice === "scissors" && computerChoice === "paper") ||
       (playerChoice === "paper" && computerChoice === "rock")
     ) {
       setPlayerResult("win");
       setScore(prevScore => prevScore + 1);
-    } else {
+    } else if (
+      (computerChoice === "rock" && playerChoice === "scissors") ||
+      (computerChoice === "scissors" && playerChoice === "paper") ||
+      (computerChoice === "paper" && playerChoice === "rock")
+    ) {
       setPlayerResult("lose");
       setScore(prevScore => prevScore - 1);
+    } else {
+      setPlayerResult("tie");
     }
   };
 
