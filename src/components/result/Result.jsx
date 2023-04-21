@@ -1,21 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
-function Result({
-  playerChoice,
-  computerChoice,
-  playerResult,
-}) {
+function Result({ playerChoice, setScore, handlePageNavigation }) {
+  const [computerChoice, setComputerChoice] = useState("");
+  const [playerResult, setPlayerResult] = useState("");
+
+  const getComputerChoice = () => {
+    const choices = ["rock", "paper", "scissors"];
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    setComputerChoice(choices[randomIndex]);
+  };
+
+  useEffect(() => {
+    getComputerChoice();
+  }, []);
+
+  const getWinner = () => {
+    if (playerChoice === computerChoice) {
+      setPlayerResult("tie");
+    } else if (
+      (playerChoice === "rock" && computerChoice === "scissors") ||
+      (playerChoice === "scissors" && computerChoice === "paper") ||
+      (playerChoice === "paper" && computerChoice === "rock")
+    ) {
+      setPlayerResult("win");
+      setScore(prevScore => prevScore + 1);
+    } else {
+      setPlayerResult("lose");
+      setScore(prevScore => prevScore - 1);
+    }
+  };
+
+  useEffect(() => {
+    getWinner();
+  }, [computerChoice]);
 
   return (
     <div>
-      <p>You chose: {playerChoice}</p>
-      <p>Computer chose: {computerChoice}</p>
-      Result:
-      {playerResult === "win" && <h2>you win</h2>}
-      {playerResult === "tie" && <h2>you tie</h2>}
-      {playerResult === "lose" && <h2>you lose</h2>}
-      <Link to="/">Play again</Link>
+      <p>you chose: {playerChoice}</p>
+      <p>computer chose: {computerChoice}</p>
+      {playerResult === "win" && <p>you win</p>}
+      {playerResult === "lose" && <p>you lose</p>}
+      {playerResult === "tie" && <p>you tie</p>}
+
+      <p onClick={() => handlePageNavigation()}>play again</p>
     </div>
   );
 }
