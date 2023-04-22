@@ -1,5 +1,4 @@
 .game {
-  margin-top: 3rem;
   position: relative;
 }
 
@@ -42,7 +41,7 @@
 
 .icon::after {
   content: "";
-  box-shadow: inset 0px 5px 6px lightgray;
+  box-shadow: inset 0px 8px lightgray;
   display: block;
   position: absolute;
   border-radius: 50%;
@@ -57,13 +56,11 @@
 
 .rock-container {
   background: var(--rock-gradient);
-    box-shadow: 0 8px hsl(349, 71%, 45%);
-
+  box-shadow: 0 8px hsl(349, 71%, 45%);
 }
 .paper-container {
   background: var(--paper-gradient);
-      box-shadow: 0 8px hsl(230, 89%, 55%);
-
+  box-shadow: 0 8px hsl(230, 89%, 55%);
 }
 .scissors-container {
   background: var(--scissors-gradient);

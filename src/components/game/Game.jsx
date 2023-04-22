@@ -12,14 +12,6 @@ function Game({ setPlayerChoice, handlePageNavigation }) {
       <div className="game__icons">
         <div
           onClick={() => {
-            setPlayerChoice("rock");
-            handlePageNavigation();
-          }}
-          className="icon rock-container">
-          <img src={rock} alt="" />
-        </div>
-        <div
-          onClick={() => {
             setPlayerChoice("paper");
             handlePageNavigation();
           }}
@@ -33,6 +25,14 @@ function Game({ setPlayerChoice, handlePageNavigation }) {
           }}
           className="icon scissors-container">
           <img src={scissors} alt="" />
+        </div>
+        <div
+          onClick={() => {
+            setPlayerChoice("rock");
+            handlePageNavigation();
+          }}
+          className="icon rock-container">
+          <img src={rock} alt="" />
         </div>
       </div>
     </section>

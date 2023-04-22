@@ -7,13 +7,15 @@
   width: 100%;
   padding: 1rem;
 
-  border: 3px solid white;
+  border: 3px solid lightgray;
   border-radius: 1rem;
   font-size: 20px;
+  margin-bottom: 3rem;
 }
 
-.header__title {
-  text-transform: uppercase;
+.header__title p {
+  font-size: 30px;
+  line-height: 0.9;
 }
 
 .header__score-box {
@@ -28,7 +30,6 @@
 
 .header__score-box p:first-child {
   font-size: 16px;
-  text-transform: uppercase;
 }
 
 .header__score {

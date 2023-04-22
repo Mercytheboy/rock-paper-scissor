@@ -37,6 +37,7 @@ body {
   background-repeat: no-repeat;
   color: #fff;
   height: 100vh;
+  text-transform: uppercase;
 }
 
 .container {
