@@ -1,0 +1,71 @@
+.game {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.triangle {
+  position: absolute;
+  display: block;
+  max-width: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game__icons {
+  width: 400px;
+  height: 350px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s ease-in;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.icon::after {
+  content: "";
+  box-shadow: inset 0px 5px 6px lightgray;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+}
+
+.icon img {
+  z-index: 1;
+}
+
+.rock-container {
+  background: var(--rock-gradient);
+    box-shadow: 0 8px hsl(349, 71%, 45%);
+
+}
+.paper-container {
+  background: var(--paper-gradient);
+      box-shadow: 0 8px hsl(230, 89%, 55%);
+
+}
+.scissors-container {
+  background: var(--scissors-gradient);
+  box-shadow: 0 8px hsl(39, 89%, 40%);
+}

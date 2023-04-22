@@ -4,7 +4,7 @@ import "./header.css";
 
 function Header({ score }) {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__title">
         <p>Rock</p>
         <p>Paper</p>
@@ -14,7 +14,7 @@ function Header({ score }) {
         <p>score</p>
         <p className="header__score">{score}</p>
       </div>
-    </div>
+    </header>
   );
 }
 
