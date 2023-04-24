@@ -6,6 +6,7 @@
 }
 
 .result__choice {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,5 +89,35 @@
     box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.1),
       0 0 0 80px rgba(255, 255, 255, 0.075),
       0 0 0 120px rgba(255, 255, 255, 0.05);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .result__container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .result__text {
+    font-size: 14px;
+  }
+
+  .result__summary p:first-child {
+    font-size: 24px;
+  }
+
+  .result__choice {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .player-choice {
+    order: 1;
+  }
+  .computer-choice {
+    order: 2;
+  }
+
+  .result__summary {
+    order: 3;
   }
 }

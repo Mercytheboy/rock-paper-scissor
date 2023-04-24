@@ -36,13 +36,15 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
-  height: 100vh;
   text-transform: uppercase;
 }
 
 .container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  gap: 2rem;
 }

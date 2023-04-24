@@ -12,7 +12,7 @@
 }
 
 .game__icons {
-  width: 400px;
+  max-width: 400px;
   height: 350px;
   position: relative;
   display: flex;
@@ -65,4 +65,27 @@
 .scissors-container {
   background: var(--scissors-gradient);
   box-shadow: 0 8px hsl(39, 89%, 40%);
+}
+
+@media screen and (max-width: 768px) {
+  .icon {
+    width: 140px;
+    height: 140px;
+  }
+
+  .icon::after {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .icon::after {
+    width: 80px;
+    height: 80px;
+  }
 }

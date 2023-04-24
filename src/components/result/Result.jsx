@@ -55,7 +55,7 @@ function Result({ playerChoice, setScore, handlePageNavigation }) {
 
   return (
     <section className="result__container">
-      <div className="result__choice">
+      <div className="result__choice player-choice">
         <p className="result__text">you picked</p>
         <div className={`icon ${playerChoice}-container ${playerResult}`}>
           <img src={images[playerChoice]} alt="" />
